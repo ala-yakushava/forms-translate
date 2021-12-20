@@ -1,0 +1,6 @@
+{
+  "field.email.label": "E-mail",
+  "field.email.placeholder": "meno@domena.cz",
+  "field.email.hint": "Potřebujeme Vaši emailovou adresu, abychom s Vámi mohli komunikovat.",
+  "field.email.error": "Prosím vložte platnou emailovou adresu."
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@linarsy/forms-translate",
+  "version": "1.0.0",
+  "description": "PoC for Merck",
+  "bin": {
+    "server": "dist/bin/server.js"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node src/bin/server.js",
+    "build": "babel src --out-dir dist",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linarsy/forms-translate.git"
+  },
+  "author": "Ala Yakushava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linarsy/forms-translate/issues"
+  },
+  "homepage": "https://github.com/linarsy/forms-translate#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "pg": "^8.3.2",
+    "sequelize": "^6.3.4",
+    "sequelize-fixtures": "^1.2.0",
+    "winston": "^3.3.3"
+  }
+}
