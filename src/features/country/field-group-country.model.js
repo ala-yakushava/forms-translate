@@ -1,9 +1,9 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import { sequelize } from '../../db';
-import { Group } from './group.model';
+import { GroupCountry } from './group-country.model';
 import { Field } from '../field';
 
-export const FieldGroup = sequelize.define('FieldGroup', {
+export const FieldGroupCountry = sequelize.define('FieldGroupCountry', {
   id: {
     type: DataTypes.UUID,
     defaultValue: Sequelize.UUIDV4,
@@ -14,7 +14,7 @@ export const FieldGroup = sequelize.define('FieldGroup', {
     allowNull: false,
     comment: 'Field is hidden'
   },
-  mandatory: {
+  required: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     comment: 'Field is required to fill'
@@ -23,5 +23,5 @@ export const FieldGroup = sequelize.define('FieldGroup', {
   freezeTableName: true
 });
 
-Field.belongsToMany(Group, { through: FieldGroup });
-Group.belongsToMany(Field, { through: FieldGroup });
+Field.belongsToMany(GroupCountry, { through: FieldGroupCountry });
+GroupCountry.belongsToMany(Field, { through: FieldGroupCountry });

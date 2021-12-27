@@ -20,6 +20,8 @@ router
   .post('/countries/rights', countryController.getRightsFromCountry)
   .post('/countries/add-groups', countryController.addGroupsToCountry)
   .post('/countries/groups', countryController.getGroupsFromCountry)
+  .post('/countries/groups/add-field', countryController.addFieldToGroupCountry)
+  .post('/countries/groups/fields', countryController.getFieldsFromGroupCountry)
 
   // routes of language
   .get('/languages', languageController.getLanguages)
@@ -34,11 +36,8 @@ router
 
   // routes of group
   .get('/groups', groupController.getGroups)
-  .post('/groups/add-field', groupController.addFieldToGroup)
-  .post('/groups/fields', groupController.getFieldsFromGroup)
 
   // routes of field
   .get('/fields', fieldController.getFields);
-
 
 export default router;

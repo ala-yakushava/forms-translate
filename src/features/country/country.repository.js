@@ -3,6 +3,8 @@ import { Country } from './country.model';
 import { Language } from '../language';
 import { Right } from '../rigth';
 import { Group } from '../group';
+import { Field } from '../field';
+import { GroupCountry } from './group-country.model';
 import { sequelize } from '../../db';
 
 export class CountryRepository {
@@ -99,5 +101,26 @@ export class CountryRepository {
     const groups = await country.getGroups();
 
     return groups;
+  }
+
+  async addFieldToGroupCountry(groupCountryId, fieldId, hidden, required) {
+    try {
+      await sequelize.transaction(async (t) => {
+        const groupCountry = await GroupCountry.findByPk(groupCountryId, { transaction: t });
+        const field = await Field.findByPk(fieldId, { transaction: t });
+        await groupCountry.addField(field, { through: { hidden, required } }, { transaction: t });
+
+        return groupCountry;
+      });
+    } catch (error) {
+      throw new Error('transaction - failed', error);
+    }
+  }
+
+  async getFieldsFromGroupCountry(groupCountryId) {
+    const groupCountry = await GroupCountry.findByPk(groupCountryId);
+    const fields = await groupCountry.getFields();
+
+    return fields;
   }
 }

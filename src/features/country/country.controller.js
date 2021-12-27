@@ -15,7 +15,7 @@ export const countryController = {
   getLanguagesFromCountry: async (req, res) => {
     const { countryId } = req.body;
     const languages = await countryService.getLanguagesFromCountry(countryId);
-    res.send(`languages ${languages.length} are in country ${countryId}`);
+    res.send(languages);
   },
 
   addRightsToCountry: async (req, res) => {
@@ -27,7 +27,7 @@ export const countryController = {
   getRightsFromCountry: async (req, res) => {
     const { countryId } = req.body;
     const rights = await countryService.getRightsFromCountry(countryId);
-    res.send(`rights ${rights.length} are in country ${countryId}`);
+    res.send(rights);
   },
 
   addGroupsToCountry: async (req, res) => {
@@ -39,6 +39,20 @@ export const countryController = {
   getGroupsFromCountry: async (req, res) => {
     const { countryId } = req.body;
     const groups = await countryService.getGroupsFromCountry(countryId);
-    res.send(`groups ${groups.length} are in country ${countryId}`);
+    res.send(groups);
+  },
+
+  addFieldToGroupCountry: async (req, res) => {
+    const { groupCountryId, fieldId, hidden, required } = req.body;
+    await countryService.addFieldToGroupCountry(
+      groupCountryId, fieldId, hidden, required
+    );
+    res.send(`field ${fieldId} is added to groupCountry ${groupCountryId}`);
+  },
+
+  getFieldsFromGroupCountry: async (req, res) => {
+    const { groupCountryId } = req.body;
+    const fields = await countryService.getFieldsFromGroupCountry(groupCountryId);
+    res.send(fields);
   }
 };

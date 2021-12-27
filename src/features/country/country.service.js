@@ -58,4 +58,22 @@ export class CountryService {
       throw new Error('Country - getGroupsFromCountry', error);
     }
   }
+
+  async addFieldToGroupCountry(groupCountryId, fieldId, hidden, required) {
+    try {
+      return await this.countryRepository.addFieldToGroupCountry(
+        groupCountryId, fieldId, hidden, required
+      );
+    } catch (error) {
+      throw new Error('Country - addFieldToGroupCountry', error);
+    }
+  }
+
+  async getFieldsFromGroupCountry(groupCountryId) {
+    try {
+      return await this.countryRepository.getFieldsFromGroupCountry(groupCountryId);
+    } catch (error) {
+      throw new Error('Country - getFieldsFromGroupCountry', error);
+    }
+  }
 }
