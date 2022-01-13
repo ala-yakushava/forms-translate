@@ -23,6 +23,21 @@ export const Field = sequelize.define('Field', {
     allowNull: false,
     comment: 'The field is common for all groups'
   },
+  hidden: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    comment: 'Field is hidden'
+  },
+  required: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    comment: 'Field is required to fill'
+  },
+  order: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    comment: 'Order of field'
+  },
   label: {
     type: DataTypes.STRING,
     allowNull: false,

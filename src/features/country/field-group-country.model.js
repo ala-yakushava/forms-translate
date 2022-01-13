@@ -11,14 +11,32 @@ export const FieldGroupCountry = sequelize.define('FieldGroupCountry', {
   },
   hidden: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
     comment: 'Field is hidden'
   },
   required: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
     comment: 'Field is required to fill'
-  }
+  },
+  order: {
+    type: DataTypes.INTEGER,
+    comment: 'Order of field'
+  },
+  label: {
+    type: DataTypes.STRING,
+    comment: 'Key of dictionary for label'
+  },
+  placeholder: {
+    type: DataTypes.STRING,
+    comment: 'Key of dictionary for placeholder'
+  },
+  hint: {
+    type: DataTypes.STRING,
+    comment: 'Key of dictionary for hint'
+  },
+  error: {
+    type: DataTypes.STRING,
+    comment: 'Key of dictionary for error'
+  },
 }, {
   freezeTableName: true
 });
