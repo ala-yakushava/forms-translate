@@ -43,3 +43,5 @@ export const FieldGroupCountry = sequelize.define('FieldGroupCountry', {
 
 Field.belongsToMany(GroupCountry, { through: FieldGroupCountry });
 GroupCountry.belongsToMany(Field, { through: FieldGroupCountry });
+FieldGroupCountry.hasMany(Dictionary, { foreignKey: 'sourceId' });
+Dictionary.belongsTo(FieldGroupCountry);
