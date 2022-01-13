@@ -13,7 +13,7 @@ export const RightCountry = sequelize.define('RightCountry', {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     comment: 'Right is selected for country'
-  },
+  }
 }, {
   freezeTableName: true
 });

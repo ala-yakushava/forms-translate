@@ -50,35 +50,39 @@ export const fixtures = [
     model: 'Right',
     data: {
       value: 'Right of correction',
-      title: 'right.rightOfCorrection'
+      label: 'right.rightOfCorrection',
+      default: true
     }
   },
   {
     model: 'Right',
     data: {
       value: 'Right of deletion',
-      title: 'right.rightOfDeletion'
+      label: 'right.rightOfDeletion',
+      default: true
     }
   },
   {
     model: 'Right',
     data: {
       value: 'Other',
-      title: 'right.other'
+      label: 'right.other',
+      default: true
     }
   },
   {
     model: 'Right',
     data: {
       value: 'Right of access',
-      title: 'right.rightOfAccess'
+      label: 'right.rightOfAccess',
+      default: true
     }
   },
   {
     model: 'Group',
     data: {
       value: 'Health Care Professional',
-      title: 'group.healthCareProfessional',
+      label: 'group.healthCareProfessional',
       default: true
     }
   },
@@ -86,7 +90,7 @@ export const fixtures = [
     model: 'Group',
     data: {
       value: 'Former Employee or Contractor',
-      title: 'group.FormerEmployeeOrContractor',
+      label: 'group.FormerEmployeeOrContractor',
       default: true
     }
   },
@@ -94,7 +98,7 @@ export const fixtures = [
     model: 'Group',
     data: {
       value: 'Current Employee or Contractor',
-      title: 'group.CurrentEmployeeOrContractor',
+      label: 'group.CurrentEmployeeOrContractor',
       default: true
     }
   },
@@ -102,7 +106,7 @@ export const fixtures = [
     model: 'Group',
     data: {
       value: 'Job Candidates',
-      title: 'group.JobCandidates',
+      label: 'group.JobCandidates',
       default: true
     }
   },

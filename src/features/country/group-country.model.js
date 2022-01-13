@@ -13,7 +13,7 @@ export const GroupCountry = sequelize.define('GroupCountry', {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     comment: 'Group is selected for country'
-  },
+  }
 }, {
   freezeTableName: true
 });
