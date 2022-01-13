@@ -47,9 +47,6 @@ export const Field = sequelize.define('Field', {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   }
-},
-{
-  paranoid: true
 });
 
 Field.hasMany(Dictionary, { foreignKey: 'sourceId' });

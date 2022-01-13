@@ -31,7 +31,4 @@ export const Language = sequelize.define('Language', {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   }
-},
-{
-  paranoid: true
 });

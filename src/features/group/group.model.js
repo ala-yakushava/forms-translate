@@ -13,7 +13,7 @@ export const Group = sequelize.define('Group', {
     allowNull: false,
     comment: 'Value of group'
   },
-  title: {
+  label: {
     type: DataTypes.STRING,
     allowNull: false,
     comment: 'Key of dictionary for group'
@@ -27,9 +27,6 @@ export const Group = sequelize.define('Group', {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   }
-},
-{
-  paranoid: true
 });
 
 Group.hasOne(Dictionary, { foreignKey: 'sourceId' });

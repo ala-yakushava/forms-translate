@@ -35,9 +35,6 @@ export const Country = sequelize.define('Country', {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   }
-},
-{
-  paranoid: true
 });
 
 Country.hasMany(Language);

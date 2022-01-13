@@ -13,18 +13,20 @@ export const Right = sequelize.define('Right', {
     allowNull: false,
     comment: 'Value of right'
   },
-  title: {
+  label: {
     type: DataTypes.STRING,
     allowNull: false,
     comment: 'Key of dictionary for right'
+  },
+  default: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    comment: 'The right is common for all countries'
   },
   timestamps: {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   }
-},
-{
-  paranoid: true
 });
 
 Right.hasOne(Dictionary, { foreignKey: 'sourceId' });

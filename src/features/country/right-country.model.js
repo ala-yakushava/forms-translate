@@ -8,7 +8,12 @@ export const RightCountry = sequelize.define('RightCountry', {
     type: DataTypes.UUID,
     defaultValue: Sequelize.UUIDV4,
     primaryKey: true
-  }
+  },
+  selected: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    comment: 'Right is selected for country'
+  },
 }, {
   freezeTableName: true
 });

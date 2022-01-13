@@ -8,7 +8,12 @@ export const GroupCountry = sequelize.define('GroupCountry', {
     type: DataTypes.UUID,
     defaultValue: Sequelize.UUIDV4,
     primaryKey: true
-  }
+  },
+  selected: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    comment: 'Group is selected for country'
+  },
 }, {
   freezeTableName: true
 });
