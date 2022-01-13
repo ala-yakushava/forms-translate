@@ -2,6 +2,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 import { sequelize } from '../../db';
 import { GroupCountry } from './group-country.model';
 import { Field } from '../field';
+import { Dictionary } from '../dictionary';
 
 export const FieldGroupCountry = sequelize.define('FieldGroupCountry', {
   id: {
