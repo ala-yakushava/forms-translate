@@ -6,7 +6,7 @@
     "server": "dist/bin/server.js"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node src/bin/server.js",
+    "start": "npx nodemon --exec babel-node src/bin/server.js",
     "build": "babel src --out-dir dist",
     "lint": "npx eslint ."
   },
